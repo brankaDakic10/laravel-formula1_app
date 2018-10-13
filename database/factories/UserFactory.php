@@ -22,3 +22,20 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Team::class, function (Faker $faker) {
+    return [
+        'name' =>$faker->name,
+        'address' => $faker->address,
+        'country'=>$faker->country
+    ];
+});
+$factory->define(App\Driver::class, function (Faker $faker) {
+    return [
+        'first_name' =>$faker->firstName,
+        'last_name' =>$faker->lastName,
+        'nationality' =>$faker->word,
+        'email' => $faker->unique()->safeEmail,
+        'imageUrl' => $faker->imageUrl(),
+    ];
+});
