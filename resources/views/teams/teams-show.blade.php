@@ -20,7 +20,7 @@
 
       
 @foreach($team->drivers as $driver)
-<li>{{$driver->first_name}} {{$driver->last_name}}</li>
+<li><a href="{{route('driver',['id'=>$driver->id])}}">{{$driver->first_name}} {{$driver->last_name}}</a></li>
 @endforeach
 </ul>
 </div>

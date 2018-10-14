@@ -5,12 +5,12 @@ All formula_1_teams
 @endsection
 @section ('content')
 <div class="col-sm-8 blog-main">
-    <h1>Teams</h1>
+    <h4>List of teams</h4>
 
     <ul>
         @foreach($teams as $team)
         <li>
-            <h4><a href="{{route('team',['id'=>$team->id])}}">{{$team->name}}</a></h4>
+            <h5><a href="{{route('team',['id'=>$team->id])}}">{{$team->name}}</a></h5>
         </li>
 
         @endforeach

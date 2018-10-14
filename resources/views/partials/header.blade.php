@@ -11,8 +11,8 @@
     </div>
      <div class="blog-header">
       <div class="container">
-        <h1 class="blog-title">Formula_1</h1> 
+        <h2 class="text-center">Formula One World Champions</h2> 
  
-         <p class="lead blog-description">An example template </p>
+         <p class="lead blog-description text-center">An example template </p>
       </div>
     </div> 
