@@ -22,7 +22,7 @@ class LoginController extends Controller
         ))
         {
            return back()->withErrors([
-               'message'=>'Bad credentals'
+            'message'=>'Bad credentals, please try again!'
            ]);
         }
          return redirect()->route('teams');
