@@ -15,3 +15,5 @@
 //     return view('welcome');
 // });
 Route::get('/','TeamsController@index')->name('teams');
+Route::get('/teams/{id}','TeamsController@show')->name('team');
+

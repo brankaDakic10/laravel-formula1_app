@@ -1,7 +1,7 @@
 <div class="blog-masthead header-nba">
       <div class="container">
         <nav class="nav blog-nav">
-          <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link active" href="/">Home</a>
           <a class="nav-link" href="#">New </a>
           <a class="nav-link" href="#">New</a>
           <a class="nav-link" href="#">New </a>

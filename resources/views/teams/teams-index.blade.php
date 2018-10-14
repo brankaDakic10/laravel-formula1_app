@@ -10,7 +10,7 @@ All formula_1_teams
     <ul>
         @foreach($teams as $team)
         <li>
-            <h4>{{$team->name}}</h4>
+            <h4><a href="{{route('team',['id'=>$team->id])}}">{{$team->name}}</a></h4>
         </li>
 
         @endforeach
