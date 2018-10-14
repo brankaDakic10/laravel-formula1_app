@@ -12,4 +12,7 @@ class Team extends Model
     public function drivers(){
         return $this->hasMany('App\Driver');
     }
+    public function comments(){
+        return $this->hasMany('App\Comment');
+   }
 }
