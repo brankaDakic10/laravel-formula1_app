@@ -17,4 +17,11 @@
 Route::get('/','TeamsController@index')->name('teams');
 Route::get('/teams/{id}','TeamsController@show')->name('team');
 Route::get('/drivers/{id}','DriversController@show')->name('driver');
-
+//register
+Route::get('/register', 'RegisterController@create');
+Route::post('/register', 'RegisterController@store');
+//login
+Route::get('/login', 'LoginController@create')->name('login');
+Route::post('/login', 'LoginController@store')->name('login-store');
+//logout
+Route::get('/logout', 'LoginController@logout')->name('logout'); 
