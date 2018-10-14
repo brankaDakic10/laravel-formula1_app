@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use App\User;
 class RegisterController extends Controller
 {
+    public function __construct()
+    {        
+                  
+        $this->middleware('guest');
+    }
+
     public function create()
     {
      return view('register.register-create');
@@ -27,8 +33,8 @@ class RegisterController extends Controller
       
         $user->save();
         // auth user now
-        auth()->login($user);
-        return redirect()->route('teams');
+        // auth()->login($user);
+        return redirect()->route('login');
     }
 
 }
