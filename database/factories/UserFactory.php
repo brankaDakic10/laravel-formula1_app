@@ -39,3 +39,10 @@ $factory->define(App\Driver::class, function (Faker $faker) {
         'imageUrl' => $faker->imageUrl(),
     ];
 });
+$factory->define(App\News::class, function (Faker $faker) {
+    return [
+        'title' =>$faker->word,
+        'content' => $faker->text(30),
+        
+    ];
+});
