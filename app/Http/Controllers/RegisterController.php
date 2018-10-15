@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\VerificationUser;
 use Illuminate\Http\Request;
 use App\User;
 class RegisterController extends Controller
@@ -16,7 +17,7 @@ class RegisterController extends Controller
     {
      return view('register.register-create');
     }
-    public function store()
+    public function store(Request $request)
     {
         $this->validate(request(),[
             'name' => 'required|min:3|max:30',
@@ -34,6 +35,8 @@ class RegisterController extends Controller
         $user->save();
         // auth user now
         // auth()->login($user);
+
+     Mail::to($request->email)->send(new VerificationUser($user));
         return redirect()->route('login');
     }
 

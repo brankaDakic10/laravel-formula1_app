@@ -26,3 +26,5 @@ Route::post('/login', 'LoginController@store')->name('login-store');
 //logout
 Route::get('/logout', 'LoginController@logout')->name('logout'); 
 Route::post('/teams/{team_id}/comments','CommentsController@store')->name('comments-team'); 
+// verification user with mail
+Route::get('/verification/{id}','LoginController@verification')->name('verification');

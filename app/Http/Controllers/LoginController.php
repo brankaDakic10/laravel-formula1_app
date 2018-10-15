@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -35,4 +36,16 @@ class LoginController extends Controller
  
         return redirect()->route('login');
        }
+
+
+       //    mail verification 
+       public function verification($id)
+       {
+        $user = User::find($id);
+        $user->is_verified = true;
+        $user->save();
+        return redirect()->route('login');
+       
+       }
+
 }
