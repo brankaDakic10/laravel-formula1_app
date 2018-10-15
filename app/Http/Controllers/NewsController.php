@@ -10,7 +10,7 @@ class NewsController extends Controller
     {
 
         // $news=News::paginate(7);
-        $news=News::with('user')->latest()->paginate(5);
+        $news=News::with('user')->latest()->paginate(7);
          return view('news.news-index',compact('news'));
     }
     public function show($id)

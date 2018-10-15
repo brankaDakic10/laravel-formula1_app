@@ -11,8 +11,9 @@ class TeamsController extends Controller
         $this->middleware('auth');
     }
     public function index()
-    {
-        $teams=Team::all();
+    {  
+        $teams=Team::paginate(5);
+        // $teams=Team::all();
          return view('teams.teams-index',compact('teams'));
     }
     public function show($id)

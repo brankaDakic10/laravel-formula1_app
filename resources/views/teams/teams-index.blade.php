@@ -15,5 +15,9 @@ All formula_1_teams
 
         @endforeach
     </ul>
+    <nav class="blog-pagination">
+      <a class="btn btn-outline-{{$teams->currentPage()== 1? 'secondary disabled':'primary'}}" href="{{$teams->previousPageUrl()}}">Previous</a>
+      <a class="btn btn-outline-{{$teams->hasMorePages()== 1? 'primary':'secondary disabled'}}" href="{{$teams->nextPageUrl()}}">Next</a>
+   </nav>
 </div>
 @endsection
