@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CommentReceived;
 use Illuminate\Http\Request;
 use App\Team;
 use App\User;
@@ -30,7 +31,12 @@ class CommentsController extends Controller
         'team_id' => $team->id,
         'user_id' => auth()->user()->id,
     ]);
-      
+       //   send to every player from a team on his email //
+       $team->drivers()->each(function ($driver) use ($team) {
+        Mail::to($driver->email)->send(new CommentReceived($team));
+     });
+
+
     return redirect()->back();
 }
 }
