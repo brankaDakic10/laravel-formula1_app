@@ -10,6 +10,11 @@ use App\Comment;
 
 class CommentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('comment-words')->only('store');
+    }
+    
    public function store(Request $request, $team_id)
    {
     $team=Team::find($team_id);
