@@ -30,3 +30,4 @@ Route::post('/teams/{team_id}/comments','CommentsController@store')->name('comme
 Route::get('/verification/{id}','LoginController@verification')->name('verification');
 // news
 Route::get('/news','NewsController@index')->name('news');
+Route::get('/news/{id}','NewsController@show')->name('new');
